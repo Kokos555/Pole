@@ -16,5 +16,18 @@ namespace P01
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Random value = new Random();
+            int n = Convert.ToInt32(textBox1.Text);
+            double[] pole = new double[n];
+            for (int i = 0; i < n; i++)
+            {
+                double cislo = value.NextDouble() * (999) + 1;
+                pole[i] = cislo;
+            }
+
+        }
     }
 }
