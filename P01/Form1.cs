@@ -27,7 +27,10 @@ namespace P01
                 double cislo = value.NextDouble() * (999) + 1;
                 pole[i] = cislo;
             }
-
+            foreach(double prvek in pole)
+            {
+                listBox1.Items.Add(prvek.ToString());
+            }
         }
     }
 }
