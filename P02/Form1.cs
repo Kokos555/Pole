@@ -33,6 +33,24 @@ namespace P02
             {
                 listBox1.Items.Add(string.Format("{0}", prvek));
             }
+            Array.Sort(pole);
+            if (radioButton1.Checked == true)
+            {
+                Array.Reverse(pole);
+                foreach (int cislo1 in pole)
+                {
+                    listBox2.Items.Add(string.Format("{0}", cislo1));
+                }
+
+            }
+            else if (radioButton2.Checked == true) {
+                Array.Sort(pole);
+                Array.Reverse(pole);
+                foreach (int cislo2 in pole)
+                {
+                    listBox2.Items.Add(string.Format("{0}", cislo2));
+                }
+            }
         }
     }
 }
