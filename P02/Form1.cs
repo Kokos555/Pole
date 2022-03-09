@@ -24,7 +24,7 @@ namespace P02
             Random value = new Random();
             int n = Convert.ToInt32(textBox1.Text);
             int[] pole = new int[n];
-            for(int i = 0; i< n; i++)
+            for (int i = 0; i < n; i++)
             {
                 int cislo = value.Next(1, 10);
                 pole[i] = cislo;
@@ -34,23 +34,28 @@ namespace P02
                 listBox1.Items.Add(string.Format("{0}", prvek));
             }
             Array.Sort(pole);
+            //2,2,3,5,6,7,7
+            int min = pole[0];
+            int max = pole[pole.Length - 1];
+            int index_posledni_minímum = Array.LastIndexOf(pole, min);
+            int druhe_min = pole[index_posledni_minímum + 1];
+            int index_posledniho_maxima = Array.IndexOf(pole, max);
+            int druhe_max = pole[index_posledniho_maxima- 1];
+
+
             if (radioButton1.Checked == true)
             {
                 Array.Reverse(pole);
-                foreach (int cislo1 in pole)
-                {
-                    listBox2.Items.Add(string.Format("{0}", cislo1));
-                }
+              
 
             }
-            else if (radioButton2.Checked == true) {
-                Array.Sort(pole);
-                Array.Reverse(pole);
-                foreach (int cislo2 in pole)
-                {
-                    listBox2.Items.Add(string.Format("{0}", cislo2));
-                }
+          
+            
+            foreach (int cislo1 in pole)
+            {
+               listBox2.Items.Add(string.Format("{0}", cislo1));
             }
+            label1.Text = string.Format("Druhé maximum je {0} a druhé minimun je {1}", druhe_max, druhe_min);
         }
     }
 }
