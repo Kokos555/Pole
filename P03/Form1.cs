@@ -14,8 +14,6 @@ namespace P03
     {
         int[] poleA;
         int[] poleB;
-        bool projelo = false;
-        bool projelo2 = false;
         public Form1()
         {
             InitializeComponent();
@@ -34,9 +32,11 @@ namespace P03
                 {
                     listBox1.Items.Add(prvek);
                 }
-            if (listBox1.Items.Count != 0)
+            if (listBox1.Items.Count != 0 && listBox2.Items.Count != 0)
             {
-                projelo = true;
+                button3.Enabled = true;
+                button4.Enabled = true;
+                button5.Enabled = true;
             }
         }
 
@@ -54,15 +54,23 @@ namespace P03
             {
                 listBox2.Items.Add(prvek);
             }
+            if (listBox1.Items.Count != 0 && listBox2.Items.Count != 0)
+            {
+                button3.Enabled = true;
+                button4.Enabled = true;
+                button5.Enabled = true;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+       
                 int[] poleC = poleA.Concat(poleB).ToArray();
                 foreach(int prvke in poleC)
                 {
                     listBox3.Items.Add(prvke);
                 }
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
