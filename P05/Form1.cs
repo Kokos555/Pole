@@ -30,9 +30,9 @@ namespace P05
                 pole[i] = rnd.Next(0, 21);
             }
             Array.Sort(pole);
-            foreach (int i in pole)
+            foreach (int cislo in pole)
             {
-                listBox1.Items.Add(i.ToString());
+                listBox1.Items.Add(string.Format("{0}",cislo));
             }
             int b = Convert.ToInt32(textBox2.Text);
             int dp = 0 - 1;
@@ -55,14 +55,14 @@ namespace P05
                 }
             }
             int[] pole1 = pole.Take(dp + 1).ToArray();
-            foreach (int i in pole1)
+            foreach (int cislo in pole1)
             {
-                listBox2.Items.Add(i.ToString());
+                listBox2.Items.Add(string.Format("{0}", cislo));
             }
             int[] pole2 = pole.Skip(dm).ToArray();
-            foreach (int i in pole2)
+            foreach (int cislo in pole2)
             {
-                listBox3.Items.Add(i.ToString());
+                listBox3.Items.Add(string.Format("{0}", cislo));
             }
         }
     }
