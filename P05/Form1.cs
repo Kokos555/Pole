@@ -23,11 +23,11 @@ namespace P05
             listBox2.Items.Clear();
             listBox3.Items.Clear();
             int n = Convert.ToInt32(textBox1.Text);
-            Random rnd = new Random();
+            Random value = new Random();
             int[] pole = new int[n];
             for (int i = 0; i < n; i++)
             {
-                pole[i] = rnd.Next(0, 21);
+                pole[i] = value.Next(0, 21);
             }
             Array.Sort(pole);
             foreach (int cislo in pole)
