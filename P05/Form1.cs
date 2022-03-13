@@ -35,9 +35,9 @@ namespace P05
                 listBox1.Items.Add(string.Format("{0}",cislo));
             }
             int b = Convert.ToInt32(textBox2.Text);
-            int dp = 0 - 1;
+            int dp = -1;
             int dm = n + 1;
-            bool f = false;
+            bool projelo = false;
             for (int i = 0; i < pole.Length; i++)
             {
                 if (pole[i] <= b)
@@ -46,12 +46,12 @@ namespace P05
                 }
                 if (pole[i] > b)
                 {
-                    if (!f)
+                    if (!projelo)
                     {
                         dm = i;
                     }
 
-                    f = true;
+                    projelo = true;
                 }
             }
             int[] pole1 = pole.Take(dp + 1).ToArray();
