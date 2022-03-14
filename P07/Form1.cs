@@ -52,6 +52,7 @@ namespace P07
                 {
                     listBox3.Items.Add(string.Format("Pole[{0}] = {1}", i+1, pole[i]));
                 }
+                
             }
         }
     }
